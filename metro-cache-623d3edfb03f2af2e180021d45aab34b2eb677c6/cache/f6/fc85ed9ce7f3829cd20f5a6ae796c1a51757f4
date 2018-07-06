@@ -1,0 +1,184 @@
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = _require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = _require(_dependencyMap[1], "./../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _jsxFileName = "/home/pankaj/react-native/newproject/src/components/Article.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _reactNative = _require(_dependencyMap[2], "react-native");
+
+  var _reactNativeElements = _require(_dependencyMap[3], "react-native-elements");
+
+  var _moment = _require(_dependencyMap[4], "moment");
+
+  var _moment2 = _interopRequireDefault(_moment);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    Article: {
+      displayName: "Article"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/home/pankaj/react-native/newproject/src/components/Article.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var Article = _wrapComponent("Article")(function (_React$Component) {
+    _inherits(Article, _React$Component);
+
+    function Article() {
+      _classCallCheck(this, Article);
+
+      return _possibleConstructorReturn(this, (Article.__proto__ || Object.getPrototypeOf(Article)).apply(this, arguments));
+    }
+
+    _createClass(Article, [{
+      key: "render",
+      value: function render() {
+        var _props$article = this.props.article,
+            title = _props$article.title,
+            description = _props$article.description,
+            publishedAt = _props$article.publishedAt,
+            source = _props$article.source,
+            urlToImage = _props$article.urlToImage,
+            url = _props$article.url;
+        var noteStyle = styles.noteStyle,
+            featuredTitleStyle = styles.featuredTitleStyle;
+        var time = (0, _moment2.default)(publishedAt || _moment2.default.now()).fromNow();
+        var defaultImg = 'https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Images-HD-Diamond-Pattern-PIC-WPB009691.jpg';
+        return _react3.default.createElement(
+          _reactNative.TouchableNativeFeedback,
+          {
+            useForeground: true,
+            onPress: function onPress() {
+              return _reactNative.Linking.openURL(url);
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 23
+            }
+          },
+          _react3.default.createElement(
+            _reactNativeElements.Card,
+            {
+              featuredTitle: title,
+              featuredTitleStyle: featuredTitleStyle,
+              image: {
+                uri: urlToImage || defaultImg
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 27
+              }
+            },
+            _react3.default.createElement(
+              _reactNativeElements.Text,
+              {
+                style: {
+                  marginBottom: 10
+                },
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 34
+                }
+              },
+              description || 'Read More..'
+            ),
+            _react3.default.createElement(_reactNativeElements.Divider, {
+              style: {
+                backgroundColor: '#dfe6e9'
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 37
+              }
+            }),
+            _react3.default.createElement(
+              _reactNative.View,
+              {
+                style: {
+                  flexDirection: 'row',
+                  justifyContent: 'space-between'
+                },
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 38
+                }
+              },
+              _react3.default.createElement(
+                _reactNativeElements.Text,
+                {
+                  style: noteStyle,
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 41
+                  }
+                },
+                source.name.toUpperCase()
+              ),
+              _react3.default.createElement(
+                _reactNativeElements.Text,
+                {
+                  style: noteStyle,
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 42
+                  }
+                },
+                time
+              )
+            )
+          )
+        );
+      }
+    }]);
+
+    return Article;
+  }(_react3.default.Component));
+
+  exports.default = Article;
+  var styles = {
+    noteStyle: {
+      margin: 5,
+      fontStyle: 'italic',
+      color: '#b2bec3',
+      fontSize: 10
+    },
+    featuredTitleStyle: {
+      marginHorizontal: 5,
+      textShadowColor: '#00000f',
+      textShadowOffset: {
+        width: 3,
+        height: 3
+      },
+      textShadowRadius: 3
+    }
+  };
+});
