@@ -10,7 +10,7 @@ export default class App extends React.Component {
     this.state = { articles: [], refreshing: true };
     this.fetchNews = this.fetchNews.bind(this);
   }
-  // Called after a component is mounted
+  
   componentDidMount() {
     this.fetchNews();
    }
